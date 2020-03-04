@@ -24,49 +24,54 @@ body{
         justify-content: space-between;
         margin-left: 15%;
 
-        margin-top: 7%;
-        &__second-half{
+        margin-top: 5%;
+        nav{
             margin: 0px;
+            display: inline-block;
+            z-index: 2;
+            width: 0%;
         }
         .list {
             display: flex;
-            float: right;
-           //margin-top: 100px;
+           justify-content: end;
             list-style: none;
             text-decoration: none;
-            font-weight: 600;
-            margin-left: 50%;
-           
+            font-size: 16px;
+            font-weight: 100;
+            @include mobile(){
+                justify-self: start;
+            }
+
             &__1 {
-                a {
-        
-                    color: hsl(230, 29%, 20%);
-                    font-size: 20px;
-                    margin-left: 50px;
-                    list-style: none;
-                    text-decoration: none;
-        
-                }
-        
-        
-                &--listLogin {
-                    color: hsl(231, 7%, 65%);
-                    margin-bottom: 90px;
-        
-                    a {
-                        color: hsl(231, 7%, 65%);
-                        font-weight: 600;
+
+                    
+                margin-left: 50px;
+                 
+
+                    a{
+                        color: $second-color;
+                        text-decoration: none;
+                        font-size: 16px;
+                      font-family: Condensed ,sans-serif;
+                        list-style: none;
+                        font-weight: bold;
                     }
-                }
-        
-                &--listPoint {
+              
+ 
+                &--list-login {
+                    
+                   a {
+                      color: $forth-color;
+                   }      
+            }
+               
+            &--list-point {
                     color: hsl(231, 7%, 65%);
                     position: relative;
-                    left: 20px;
-                    list-style: circle;
-                }
-            }
-        
+                    font-size: 7px;
+                    top: 7px;
+              }
+           }
         }
     }
 }
@@ -76,11 +81,18 @@ body{
       margin-left: 15%;
       margin-top: 10%;
       .child2{
+          h1{
+              font-size: 50px;
+              width: 80%;
+          }
+          P{
+            font-size: 18px;
+          }
           &__button1{
             color: #ffffff;
             border-radius: 16px;
-            width: 9%;
-            height: 30px;
+            width: 7%;
+            height: 25px;
             background-color: $second-color;
             border: none;
             margin-right: 25px;
@@ -88,10 +100,11 @@ body{
             -moz-border-radius: 16px;
             -ms-border-radius: 16px;
             -o-border-radius: 16px;
+            font-weight: bold;
 }
           &__button2{
             border-radius: 10px;
-            width: 45%;
+            width: 30%;
             height: 50px;
             background-color: $thirt-color;
             border: none;
@@ -101,35 +114,46 @@ body{
 
           }
           &__span1{
-            font-size: 20px;
+            font-size: 15px;
             color: hsl(231, 7%, 65%);
             text-transform: uppercase;
+            letter-spacing: 5px;
           }
           &__span2{
-            font-size: 20px;
+            font-size: 15px;
             color: hsl(231, 7%, 65%);
             text-transform: uppercase;
+            letter-spacing: 5px;
           }
          
       }
       .child3{
        overflow: hidden;
+
           &__img{
               
-            width: 100%;
-            position: relative;
-            left: 30%;
-            top: %;
+           // width: 100%;
+         //   position: absolute;
+           // top:0;
+           // margin: auto;
+            bottom: 5%;
           }
-          &__back-div{
+        &__back-div{
             position: absolute;
             background-color: hsl(207, 33%, 95%);
-            border-radius: 0 0 0 55px;
+            border-radius: 0 0 0 50px;
             z-index: -1;
-            width: 50%;
-            height: 50vh;
+            width: 45%;
+            height: 490px;
             top: 0;
             right: 0px;
-          }
+            -webkit-border-radius: 0 0 0 50px;
+            -moz-border-radius: 0 0 0 50px;
+            -ms-border-radius: 0 0 0 50px;
+            -o-border-radius: 0 0 0 50px;
+            @include mobile(){
+                float: right;
+            }
+}
       }
-  }
+    }

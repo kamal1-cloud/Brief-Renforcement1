@@ -12,45 +12,53 @@ body {
   display: flex;
   justify-content: space-between;
   margin-left: 15%;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
-.nav .child1__second-half {
+.nav .child1 nav {
   margin: 0px;
+  display: inline-block;
+  z-index: 2;
+  width: 0%;
 }
 
 .nav .child1 .list {
   display: flex;
-  float: right;
+  justify-content: end;
   list-style: none;
   text-decoration: none;
-  font-weight: 600;
-  margin-left: 50%;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+@media (max-width: 375px) {
+  .nav .child1 .list {
+    justify-self: start;
+  }
+}
+
+.nav .child1 .list__1 {
+  margin-left: 50px;
 }
 
 .nav .child1 .list__1 a {
   color: #242942;
-  font-size: 20px;
-  margin-left: 50px;
-  list-style: none;
   text-decoration: none;
+  font-size: 16px;
+  font-family: Condensed ,sans-serif;
+  list-style: none;
+  font-weight: bold;
 }
 
-.nav .child1 .list__1--listLogin {
+.nav .child1 .list__1--list-login a {
   color: #a0a1ac;
-  margin-bottom: 90px;
 }
 
-.nav .child1 .list__1--listLogin a {
-  color: #a0a1ac;
-  font-weight: 600;
-}
-
-.nav .child1 .list__1--listPoint {
+.nav .child1 .list__1--list-point {
   color: #a0a1ac;
   position: relative;
-  left: 20px;
-  list-style: circle;
+  font-size: 7px;
+  top: 7px;
 }
 
 .gadring {
@@ -60,11 +68,20 @@ body {
   margin-top: 10%;
 }
 
+.gadring .child2 h1 {
+  font-size: 50px;
+  width: 80%;
+}
+
+.gadring .child2 P {
+  font-size: 18px;
+}
+
 .gadring .child2__button1 {
   color: #ffffff;
   border-radius: 16px;
-  width: 9%;
-  height: 30px;
+  width: 7%;
+  height: 25px;
   background-color: #242942;
   border: none;
   margin-right: 25px;
@@ -72,11 +89,12 @@ body {
   -moz-border-radius: 16px;
   -ms-border-radius: 16px;
   -o-border-radius: 16px;
+  font-weight: bold;
 }
 
 .gadring .child2__button2 {
   border-radius: 10px;
-  width: 45%;
+  width: 30%;
   height: 50px;
   background-color: #ff5c5c;
   border: none;
@@ -86,15 +104,17 @@ body {
 }
 
 .gadring .child2__span1 {
-  font-size: 20px;
+  font-size: 15px;
   color: #a0a1ac;
   text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 .gadring .child2__span2 {
-  font-size: 20px;
+  font-size: 15px;
   color: #a0a1ac;
   text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 .gadring .child3 {
@@ -102,19 +122,26 @@ body {
 }
 
 .gadring .child3__img {
-  width: 100%;
-  position: relative;
-  left: 30%;
-  top: %;
+  bottom: 5%;
 }
 
 .gadring .child3__back-div {
   position: absolute;
   background-color: #eef3f6;
-  border-radius: 0 0 0 55px;
+  border-radius: 0 0 0 50px;
   z-index: -1;
-  width: 50%;
-  height: 50vh;
+  width: 45%;
+  height: 490px;
   top: 0;
   right: 0px;
+  -webkit-border-radius: 0 0 0 50px;
+  -moz-border-radius: 0 0 0 50px;
+  -ms-border-radius: 0 0 0 50px;
+  -o-border-radius: 0 0 0 50px;
+}
+
+@media (max-width: 375px) {
+  .gadring .child3__back-div {
+    float: right;
+  }
 }
