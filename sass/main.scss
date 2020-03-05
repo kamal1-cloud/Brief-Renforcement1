@@ -40,63 +40,55 @@ body{
   
                    margin-right: -300px;
                    cursor: pointer;
-                   &--checkbtn .active::before{
-                       content: '\f00d';
-                   }
+                   #toggle{
+                    display: none;
+                    @include mobile(){
+                        &:checked~.list{
+                                display: block;
+                        }
+                    }
+                    
                 }
-    
+                  
+                }
+        
             }
             
         }
 
         nav{
+            
             margin: 0px;
             display: inline-block;
             z-index: 2;
             width: 0%;
-             @include mobile(){
-                nav .active{
-                left: 0;
-            }
-            
-            }
-            #toggle{
-                display: none;
-                @include mobile(){
-                    #toggle:checked~.list{
-                            display: block;
-                            
-                    }
-                }
-                
-            }
+           
+          
         }
-        
+    }
         .list {
+            display: block;
             z-index: 1;
-            display: flex;
-           justify-content: end;
+            justify-content: end;
             list-style: none;
             text-decoration: none;
             font-size: 16px;
             font-weight: 100;
+
             @include mobile(){
-                display: none;
-                position: fixed;
-                width: 70%;
-                height: 200PX;
-                background: #ffffff;
-                top: 80px;
-                flex: none;
-                text-align: center;
-                line-height: 20px;
-                justify-content: center;
-                margin-right: auto;
-                margin-left: -10%;
-                .list.active{
-                    display: block;
-                }
-            }
+            position: fixed;
+            width: 70%;
+            height: 200PX;
+            background: #ffffff;
+            top: 80px;
+             flex: none;
+            text-align: center;
+            line-height: 20px;
+            justify-content: center;
+            margin-right: auto;
+             margin-left: -10%;
+
+           }
             
             &__1 { 
                 margin-left: 50px;
@@ -105,9 +97,7 @@ body{
                     margin: 0px;
                     margin-right: 5%;
                     margin-top: 7%;
-                    .list.active &__1{
-                        display: block;
-                    }
+                   
              
                 }
                
@@ -148,7 +138,7 @@ body{
            }
         }
     }
-}
+
   .gadring{
       display: flex;
       justify-content: space-between;
