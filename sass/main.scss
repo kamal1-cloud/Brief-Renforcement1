@@ -1,0 +1,341 @@
+$primary-color: hsl(207, 33%, 95%);
+$second-color: hsl(230, 29%, 20%);
+$thirt-color: hsl(0, 100%, 68%);
+$forth-color: hsl(231, 7%, 65%);
+$mobile:1024px;
+$large-font: 700px;
+$meduim-font: 400px;
+$small-font: 18px;
+$font: 'Barlow';
+$second-font:'Barlow Condensed';
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', ;
+}
+
+
+
+.grey {
+    position: absolute;
+    background-color: $primary-color;
+    border-radius: 0 0 0 70px;
+    z-index: -1;
+    width: 50%;
+    height: 450px;
+    top: 0;
+    right: 0px;
+    -webkit-border-radius: 0 0 0 70px;
+    -moz-border-radius: 0 0 0 70px;
+    -ms-border-radius: 0 0 0 70px;
+    -o-border-radius: 0 0 0 70px;
+    @include mobile(){
+
+        height: 500px;
+    }
+}
+
+.menu {
+    margin: 10px;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem;
+
+        input[type=checkbox] {
+            display: none;
+
+
+        }
+
+        .dropdownclose {
+            visibility: hidden;
+        }
+
+        ul {
+            width: 48vw;
+
+            @include mobile() {
+                display: none;
+                z-index: 1;
+                width: 72%;
+                margin-top: 10%;
+                height: 290px;
+                padding-right: 12%;
+               text-align: center;
+                padding-top: 3%;
+                box-shadow: -2px 2px 8px $forth-color;
+                border-radius: 5px;
+                background-color: #fff;
+                position: absolute;
+                right: 8%;
+
+            }
+
+
+            li {
+                padding: 1rem;
+
+                a {
+                    color: $second-color;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 24px;
+                    text-align: center;
+                }
+
+            }
+
+            .list--grey {
+                @include mobile() {
+                    display: none;
+                }
+            }
+
+            .list--bordertop {
+                @include mobile() {
+                  border-top: 1px solid $forth-color;
+                    margin-top: 20px;
+                  
+
+                }
+
+                a {
+                    color: $forth-color;
+
+                }
+            }
+
+        }
+
+        .dropdowntoggle {
+            display: none;
+
+            @include mobile() {
+                display: block;
+                margin-right: 30px;
+                margin-top: 20px;
+
+            }
+        }
+
+        input[type=checkbox]:checked~ul {
+            display: block;
+        }
+
+        input[type=checkbox]:checked~.dropdowntoggle {
+            visibility: hidden;
+        }
+
+        input[type=checkbox]:checked~.dropdownclose {
+            visibility: visible;
+            margin-right: 30px;
+        }
+    }
+}
+
+
+.section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    margin-top: 5rem;
+    padding-left: 3rem;
+   .PART1{
+    margin-left: 15%;
+   }
+
+    span {
+        font-size: 16px;
+        color: $forth-color;
+        
+    }
+
+    @include mobile() {
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 18px;
+        margin-top: 95%;
+
+
+    }
+}
+
+
+h1 {
+    width: 77%;
+    font-size: 50px;
+    color: $second-color;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @include mobile() {
+        font-size: 36px;
+        max-width: 100%;
+        font-weight: 800;
+
+    }
+
+}
+
+P {
+    font-size: 35px;
+
+
+}
+
+.logoImg{
+    margin-left: 8%;
+}
+
+.buton {
+    &__1 {
+        color: #ffffff;
+        border-radius: 30px;
+        font-size: 20px;
+        height: 35px;
+        background-color: $second-color;
+        border: none;
+        margin-right: 25px;
+        padding: 0px 10px;
+        font-weight: bold;
+
+        @include mobile() {
+            width: 18%;
+            height: 33px;
+            font-weight: bold;
+        }
+       
+   
+    }
+
+ 
+
+}
+
+.button {
+
+    &__2 {
+        border-radius: 10px;
+        width: 24%;
+        height: 50px;
+        background-color: $thirt-color;
+        border: none;
+        color: rgb(255, 255, 255);
+        margin-top: 30px;
+        margin-right: 20px;
+
+        @include mobile() {
+            width: 40%;
+            height: 50px;
+
+        }
+
+    }
+}
+
+
+.PART2 {
+    overflow: hidden;
+    grid-column: 2/3;
+    grid-row: 1/2;
+   
+}
+
+.list {
+font-family: $second-font;
+    display: flex;
+    list-style: none;
+   width: 200px;
+   margin: 0;
+   margin-left: 6%;
+ 
+    a {
+
+        color: $second-color;
+        text-decoration: none;
+        font-weight: 600;
+        margin-right: 1em;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include mobile() {
+            margin-right: 0px;
+            margin-left: 3rem;
+
+        }
+    }
+
+
+    @include mobile() {
+        // display: none;
+    }
+
+
+
+    &__1 {
+        a {
+
+            color: $second-color;
+            font-size: 20px;
+            margin-left: 50px;
+            list-style: none;
+            text-decoration: none;
+
+        }
+
+
+        &--listLogin {
+            color: $forth-color;
+    
+
+            a {
+                color: $forth-color;
+                font-weight: 600;
+            }
+        }
+
+        &--listPoint {
+            color: $forth-color;
+            position: relative;
+            font-size: 8px;
+            left: 20px;
+            top: 10px;
+
+        }
+    }
+}
+
+
+.img {
+   
+    &__1 {
+        
+        width: 135%;
+        @include mobile() {
+            width: 170%;
+            overflow: hidden;
+            position: absolute;
+            top: 9rem;
+
+        }
+    }
+}
+
+.grid {
+    @include mobile() {
+        margin-left: 10px;
+        margin-top: 80px;
+    }
+}
